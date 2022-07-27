@@ -1,7 +1,8 @@
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/  \1/'
 }
 
+# custom font hex: e0a0 (git), f2dd (superpowers)
 export PS1="\[\e[31m\] \[\e[000m\]\[\e[33m\]\W \[\e[000m\]\[\e[32m\]\\$\[\e[000m\]\[\e[36m\]\$(parse_git_branch)\[\033[00m\] \[\e[000m\]\[\e[34m\]> \[\e[000m\]"
 
 # git graph
